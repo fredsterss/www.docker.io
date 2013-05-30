@@ -1,0 +1,7 @@
+django==1.5.1
+django-extensions==1.1.1
+Unipath==0.2.1
+PyYAML==3.10
+django-intercom==0.0.6
+django-analytical==0.15.0
+

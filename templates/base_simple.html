@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%  comment  %}
+
+    Base template for the simplest pages.
+    It includes the main base row and block to align content to the main layout
+
+{% endcomment %}
+
+
+{# The is the main index part#}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="span6 offset3 box">
+            {% block content %}
+                <!-- this is the container for __simple__ pages -->
+
+            {% endblock content %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+
+

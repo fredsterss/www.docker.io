@@ -1,0 +1,44 @@
+{% comment %}
+
+Form snippet to show a block with warnings.
+Author: Thatcher Peskens, April 2005
+
+{% endcomment %}
+
+{% load i18n %}
+
+{#If we get a "success" show a green alert#}
+
+{# notification bar, will show up yellow when there are messages #}
+{% if messages %}
+<div class="alert alert-info alert-block">
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+{% if request.GET.success == "true" %}
+    <div class="alert alert-success alert-block">
+        <h4>Changes saved</h4>
+    </div>
+{% endif %}
+
+{% if form.errors and not form.non_field_errors %}
+<div class="alert alert-error alert-block">
+    <h4>There was a problem with your input.</h4>
+    {% blocktrans count counter=form.errors.items|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+</div>
+{% endif %}
+
+{% if form.non_field_errors %}
+<div class="alert alert-error alert-block">
+    <h4>Error</h4>
+    {% for error in form.non_field_errors %}
+    {{ error }} <br>
+    {% endfor %}
+</div>
+{% endif %}

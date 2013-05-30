@@ -1,0 +1,12 @@
+{% comment %}
+
+Form snippet to the bootstrap style defaults to all generic forms.
+Author: Thatcher Peskens, April 2013
+
+{% endcomment %}
+
+{% for field in form %}
+    <dt>{{ field.label_tag }}{% if field.errors %} <span class="error">{{ field.errors|join:", " }}</span>{% endif %}</dt>
+    <dd class="fielddd">{{ field }}</dd>
+    <dd class="helptext">{{ field.help_text|safe }}</dd>
+{% endfor %}

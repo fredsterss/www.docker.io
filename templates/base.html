@@ -1,0 +1,136 @@
+{%  comment  %}
+
+    author: Thatcher Peskens, April 2013
+
+    Base template for all pages.
+    It includes header, footer and other things.
+
+    When extending this page, at a minimum your content should be wrapped in
+    <div class="container">     # not actually sure if we cannot remove this :-p
+    <div class="row">           # define row
+    <div class="span12">        # set the number of columns you want you block to use the total number
+                                # of available columns is 12
+{% endcomment %}
+{% load intercom %}{% load staticfiles %}{% load google_analytics %}{% load navactive %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <!-- [if it IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" />
+    <title>
+        {% block title %}{% endblock title %} | Docker, The linux container engine
+    </title>
+    <meta name="description" content="{% block meta-description %}Docker Index, The linux Container Engine Image Index{% endblock meta-description %}" />
+    <meta name="keywords" content="{% block meta-keywords %}{% endblock meta-keywords %}Docker Index, Docker, Linux Containers, Container" />
+    {% block area-meta-author %}{% endblock area-meta-author %}
+    {% block extra-meta %}{% endblock %}
+
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-custom.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"> {% endblock stylesheets %}
+    <link href='//fonts.googleapis.com/css?family=Cabin:400,700,400italic' rel='stylesheet' type='text/css'>
+    {% block page_styles %}{% endblock page_styles %}
+    {% block js %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script>
+        // Make the subheader sticky
+        $(function(){
+            $(window).scroll(function(){
+
+                if ($(window).scrollTop() > 40) {
+                    $("#stickynav").addClass("navbar-fixed-top").removeClass("navbar-static-top");
+                    $("body").css('margin-top', '40px');
+                } else {
+                    $("#stickynav").removeClass("navbar-fixed-top").addClass("navbar-static-top");
+                    $("body").css('margin-top', '0px');
+                }
+            });
+        });
+    </script>
+    {% endblock js %} {% block page_js %}{% endblock page_js %}
+    {% google_analytics %}
+</head>
+<body>
+
+
+
+<!-- navigation -->
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container" >
+{#            <div class="brand logo"><a href="/">DOCKER</a></div>#}
+
+            <ul class="nav pull-right">
+                <li class="active"><a href="http://www.docker.io/">About</a></li>
+                <li><a href="/gettingstarted/">Getting started</a></li>
+                <li><a href="http://docs.docker.io">Documentation</a></li>
+                <li><a href="/community">Community</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="stickynav" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container" >
+            <ul class="nav pull-left">
+                <li class="active">something here</li>
+            </ul>
+
+            <ul class="nav nav-login pull-right">
+
+                {% if user.is_authenticated %}
+{#                    <li><a href="{% url 'profile_home' %}">{{ user }}</a></li>#}
+{#                    <li><a href="{% url 'logout' %}">logout</a></li>#}
+                    {% if user.is_staff %}
+{#                        <li><a href="{% url 'admin:index' %}">admin</a></li>#}
+                    {% endif %}
+                {% else %}
+{#                    <li class="active"><a href="{% url 'signup' %}">signup</a></li>#}
+{#                    <li><a href="{% url 'login' %}">login</a></li>#}
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end of navigation -->
+
+{# The is the main index part #}
+{% block body %}
+    <div class="content">
+        {% block content %}
+            <h1>Django Index</h1>
+        {% endblock content %}
+    </div>
+{% endblock body %}
+
+
+<!-- footer -->
+<div class="container">
+    <div class="row" >
+        <div class="span12 footer">
+            <div class="span8 tbox">
+                Docker and the Docker index are projects by <a href="http://dotcloud.com">dotCloud</a>
+            </div>
+
+            <div class="span4 tbox textright forceleftmargin social links">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of footer -->
+
+<!-- late loading scripts -->
+{#{% intercom_tag %}#}
+</body>
+
+</html>

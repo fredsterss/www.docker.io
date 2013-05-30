@@ -1,0 +1,18 @@
+# Standards
+*.log
+*.pot
+*.pyc
+.DS_Store
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+htmlcov
+.idea
+.dotcloud
+
+# the packages required to build bootstrap
+docker_index/assets/css/sources/node_modules

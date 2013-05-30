@@ -1,0 +1,419 @@
+// Main CSS configuration file
+// by Thatcher Peskens, thatcher@dotcloud.com
+//
+// Please note bootstrap is customized to include custom font, background-color, and link colors.
+
+
+
+// Variables for main.less
+// -----------------------
+
+@boxTopMargin: 			8px;
+@boxPaddingSize:			15px;
+
+
+.debug {
+	border: 2px dotted red !important;
+}
+
+
+// Other custom colors for Docker
+// --------------------------
+
+// ** are defined in sources/less/variables  **
+@import "sources/less/variables.less";
+
+
+// Styles generic for each and every page
+// ----------------------------------- // ----------------------------------- 
+
+
+// moving body down to make place for fixed navigation
+body {
+	margin-top: 0px;
+}
+
+p {
+	
+}
+
+p a {
+//	text-decoration: underline;
+}
+
+
+// Styles for top navigation
+// ----------------------------------
+.navbar .navbar-inner {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: -1px;
+}
+
+.navbar .navbar-inner .container {
+  width: 952px; 
+}
+
+.navbar .brand {
+	margin-left: 0px;
+	float: left;
+	display: block;
+	// Vertically center the text given @navbarHeight
+	padding: ((@navbarHeight - @baseLineHeight) / 2) 20px ((@navbarHeight - @baseLineHeight) / 2);
+	font-size: 20px;
+	font-weight: 200;
+	color: @deepRed;
+	text-shadow: 0 1px 0 @navbarBackgroundHighlight;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.brand.logo a {
+	color: white;
+
+}
+
+.logo {
+	background-color: #A30000;
+	color: white;
+}
+
+.nav-login {
+  li {
+   	a {
+		color: white;
+		padding: 10px 15px 10px;
+	}	
+  }
+
+}
+
+
+// Bootstrap elements
+// ----------------------------------
+
+.row {
+
+}
+
+.container {
+	// background-color: green;
+
+}
+
+// Styles on blocks of content
+// ----------------------------------
+
+// everything which is a block should have box-sizing: border-box;
+div[class*='span']
+{
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: @boxPaddingSize;
+
+	div {
+		margin: -@boxPaddingSize;
+	}
+}
+
+// Box for making white with a border, and some nice spacings
+.box {
+	background-color: white;
+	margin-top: @boxTopMargin;
+	border: 1px solid black;
+}
+
+// Transparent box, same properties as box, but no background or border
+.tbox {
+	margin-top: @boxTopMargin;
+}
+
+
+// Transparent box, floating left
+.tbox.fleft {
+	position: relative;
+	float: left;
+} 
+
+// Transparent box, floating right
+.tbox.fright {
+	position: relative;
+	float: right;
+}
+
+.box {
+	h1, h2, h3, h4 {
+		margin-top: -5px;
+	}
+}
+
+.nested {
+	padding: @boxPaddingSize;
+}
+
+.box div {
+  padding: @boxPaddingSize;
+}
+
+// set a top margin of @boxTopMargin + 8 px to make it show a margin 
+// instead of the div being flush against the side. Typically only 
+// required for a stacked div in a column, w.o. using row.
+.forcetopalign {
+	margin-top: 15px !important;
+}
+.forcetopmargin {
+	margin-top: 23px !important;
+}
+.forceleftalign {
+	margin-left: 15px !important;
+}
+.forceleftmargin {
+	margin-left: 21px !important;
+}
+
+
+// simple text aligns
+.textcenter {
+	text-align: center;
+}
+
+.textright {
+	text-align: right;
+}
+
+.textsmaller {
+  font-size: @fontSizeSmall;
+}
+
+
+/* =======================
+   Social footer
+======================= */
+
+.social .twitter, .social .github, .social .googleplus {
+  background: url("../img/footer-links.png") no-repeat transparent;
+  display: inline-block;
+  height: 35px;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 35px;
+  margin-right: 10px;
+}
+
+.social .twitter {
+  background-position: 0px 2px;
+}
+
+.social .github {
+  background-position: -59px 2px;
+}
+
+
+
+
+
+// Styles on the forms
+// ----------------------------------
+
+form table {
+  th {
+    vertical-align: top;
+    text-align: right;
+//    line-break: none;
+    white-space: nowrap;
+  }
+}
+
+.dtform {
+  label {
+    font-weight: bold;
+  }
+
+  .helptext {
+    font-size: @fontSizeSmall;
+    margin-top: -4px;
+    margin-bottom: 10px;
+  }
+
+  .fielddd input {
+    width: 250px;
+  }
+
+  .error {
+    color: @deepRed;
+  }
+}
+
+div.alert.alert-block {
+  margin-bottom: 15px;
+}
+
+
+
+// Styles on the footer
+// ----------------------------------
+
+
+footer, .footer {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-top: 2px solid black;
+
+	.ligaturesymbols {
+		font-size: 30px;
+		color: black;
+		a {
+			color: black;
+		}
+	}
+}
+
+
+
+// Styles specifically for the homepage
+// ----------------------------------- // -----------------------------------
+
+.featured {
+  ol {
+    list-style: none;
+    margin-left: 0px;
+  }
+  h5 {
+    margin-left: -10px;
+  }
+  p {
+    margin-top: -5px;
+  }
+}
+
+.searchblock {
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+  h1 {
+    margin-left: -10px;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+}
+
+.dockerintro {
+//  margin-bottom: 80px;
+//  padding: 15px;
+//  padding-top: 30px;
+}
+
+
+// Styles specifically for the search
+// ----------------------------------- // -----------------------------------
+
+#searchbox input[type="text"] {
+  height: 35px;
+  font-size: 22px;
+  margin-right: 0px;
+
+  line-height: 25px;
+  padding-left: 10px;
+  border: 1px solid black;
+}
+
+#searchbox input[type="submit"] {
+  height: 44px;
+  font-size: 22px;
+  position: relative;
+  right: 0px;
+  float: right;
+
+}
+
+
+.searchresults {
+  ol li {
+    display: block;
+    list-style: none;
+    margin-left: -15px;
+    margin-top: 20px;
+  }
+  h3 a {
+    text-decoration: underline;
+  }
+  p {
+    font-size: @baseFontSize * 1.10; // ~14px
+    margin-top: -5px;
+  }
+
+  .date {
+    margin-top: -4px;
+    font-size: @fontSizeSmall;
+  }
+}
+
+
+
+
+// Styles specifically for the repository pages
+// ----------------------------------- // ----------------------------------- 
+
+.repotop .reponameblock{
+	margin-right: 35px; // this also has to compensate for the negative -15 
+}
+
+.repotop .tbox .topexpl {
+	font-size: 12pt;
+	color: gray;
+}
+
+.repotop .tbox h2 {
+	margin-top: 0px;
+}
+
+.reponav {
+	margin-top: -5px;
+	margin-bottom: -5px;
+}
+
+
+#reponamefield label {
+   height: 35px;
+   font-size: 18px;
+   line-height: 14px;
+   margin-top: 15px;
+}
+
+
+#reponamefield input[type="text"] {
+   height: 35px;
+   font-size: 22px;
+   line-height: 14px;
+}
+
+
+#reponamefield input[type="button"] {
+   height: 45px;
+   font-size: 22px;
+   line-height: 14px;
+}
+
+
+.fullwidtharea {
+  width: 400px;
+}
+
+
+// Styles specifically for the profile pages
+// ----------------------------------- // -----------------------------------
+.profile-summary {
+  h3 {
+    margin-top: 10px;
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 10px;
+  }
+}
+

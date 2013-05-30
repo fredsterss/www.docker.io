@@ -1,0 +1,245 @@
+.debug {
+  border: 2px dotted red !important;
+}
+body {
+  margin-top: 0px;
+}
+.navbar .navbar-inner {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: -1px;
+}
+.navbar .navbar-inner .container {
+  width: 952px;
+}
+.navbar .brand {
+  margin-left: 0px;
+  float: left;
+  display: block;
+  padding: 10px 20px 10px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #a30000;
+  text-shadow: 0 1px 0 #f2f2f2;
+}
+.navbar .brand:hover,
+.navbar .brand:focus {
+  text-decoration: none;
+}
+.brand.logo a {
+  color: white;
+}
+.logo {
+  background-color: #A30000;
+  color: white;
+}
+.nav-login li a {
+  color: white;
+  padding: 10px 15px 10px;
+}
+div[class*='span'] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px;
+}
+div[class*='span'] div {
+  margin: -15px;
+}
+.box {
+  background-color: white;
+  margin-top: 8px;
+  border: 1px solid black;
+}
+.tbox {
+  margin-top: 8px;
+}
+.tbox.fleft {
+  position: relative;
+  float: left;
+}
+.tbox.fright {
+  position: relative;
+  float: right;
+}
+.box h1,
+.box h2,
+.box h3,
+.box h4 {
+  margin-top: -5px;
+}
+.nested {
+  padding: 15px;
+}
+.box div {
+  padding: 15px;
+}
+.forcetopalign {
+  margin-top: 15px !important;
+}
+.forcetopmargin {
+  margin-top: 23px !important;
+}
+.forceleftalign {
+  margin-left: 15px !important;
+}
+.forceleftmargin {
+  margin-left: 21px !important;
+}
+.textcenter {
+  text-align: center;
+}
+.textright {
+  text-align: right;
+}
+.textsmaller {
+  font-size: 11.9px;
+}
+/* =======================
+   Social footer
+======================= */
+.social .twitter,
+.social .github,
+.social .googleplus {
+  background: url("../img/footer-links.png") no-repeat transparent;
+  display: inline-block;
+  height: 35px;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 35px;
+  margin-right: 10px;
+}
+.social .twitter {
+  background-position: 0px 2px;
+}
+.social .github {
+  background-position: -59px 2px;
+}
+form table th {
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
+.dtform label {
+  font-weight: bold;
+}
+.dtform .helptext {
+  font-size: 11.9px;
+  margin-top: -4px;
+  margin-bottom: 10px;
+}
+.dtform .fielddd input {
+  width: 250px;
+}
+.dtform .error {
+  color: #a30000;
+}
+div.alert.alert-block {
+  margin-bottom: 15px;
+}
+footer,
+.footer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 2px solid black;
+}
+footer .ligaturesymbols,
+.footer .ligaturesymbols {
+  font-size: 30px;
+  color: black;
+}
+footer .ligaturesymbols a,
+.footer .ligaturesymbols a {
+  color: black;
+}
+.featured ol {
+  list-style: none;
+  margin-left: 0px;
+}
+.featured h5 {
+  margin-left: -10px;
+}
+.featured p {
+  margin-top: -5px;
+}
+.searchblock {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.searchblock h1 {
+  margin-left: -10px;
+}
+.searchblock p {
+  margin-top: 0px;
+}
+#searchbox input[type="text"] {
+  height: 35px;
+  font-size: 22px;
+  margin-right: 0px;
+  line-height: 25px;
+  padding-left: 10px;
+  border: 1px solid black;
+}
+#searchbox input[type="submit"] {
+  height: 44px;
+  font-size: 22px;
+  position: relative;
+  right: 0px;
+  float: right;
+}
+.searchresults ol li {
+  display: block;
+  list-style: none;
+  margin-left: -15px;
+  margin-top: 20px;
+}
+.searchresults h3 a {
+  text-decoration: underline;
+}
+.searchresults p {
+  font-size: 15.400000000000002px;
+  margin-top: -5px;
+}
+.searchresults .date {
+  margin-top: -4px;
+  font-size: 11.9px;
+}
+.repotop .reponameblock {
+  margin-right: 35px;
+}
+.repotop .tbox .topexpl {
+  font-size: 12pt;
+  color: gray;
+}
+.repotop .tbox h2 {
+  margin-top: 0px;
+}
+.reponav {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+#reponamefield label {
+  height: 35px;
+  font-size: 18px;
+  line-height: 14px;
+  margin-top: 15px;
+}
+#reponamefield input[type="text"] {
+  height: 35px;
+  font-size: 22px;
+  line-height: 14px;
+}
+#reponamefield input[type="button"] {
+  height: 45px;
+  font-size: 22px;
+  line-height: 14px;
+}
+.fullwidtharea {
+  width: 400px;
+}
+.profile-summary h3 {
+  margin-top: 10px;
+}
+.profile-summary ul {
+  list-style: none;
+  margin-left: 10px;
+}
