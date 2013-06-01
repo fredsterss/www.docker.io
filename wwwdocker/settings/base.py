@@ -138,6 +138,7 @@ PREREQ_APPS = (
     'django_extensions',
     'intercom',
     'analytical',
+    'mailchimp',
 )
 
 PROJECT_APPS = (
@@ -190,4 +191,4 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-6096819-11'
 GOOGLE_ANALYTICS_SITE_SPEED = True
 
 ALLOWED_HOSTS = ['docker.io'] # need to set to real prod value.
-
+MAILCHIMP_API_KEY = SECRET_KEY = os.environ['MAILCHIMP_API_KEY']

@@ -1,10 +1,9 @@
 # settings/dotcloud.py
-#from wwwdocker.settings.base import *
-#import json
+from wwwdocker.settings.base import *
 
 print "using dotcloud settings"
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 MEDIA_URL = '/media/'
