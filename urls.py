@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'base.views.home', name='home'),
     url(r'^gettingstarted/$', TemplateView.as_view(template_name='base/gettingstarted.html')),
+    url(r'^markdown/$', TemplateView.as_view(template_name='homepage.md')),
     url(r'^news_signup/$', 'base.views.email_thanks', name='email_thanks'),
     # url(r'^wwwdocker/', include('wwwdocker.foo.urls')),
     url(r'^tutorial/', include('tutorial.urls')),

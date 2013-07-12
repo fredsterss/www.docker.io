@@ -2,12 +2,21 @@
 
 {% block content %}
 
-    Hello world!
+
+    {% block title %}
+
+        this is the original title block
+
+    {% endblock %}
+
+{#    {% include 'homepage.md' %}#}
 
     <form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">
     {% csrf_token %}
 
     {{ form }}
+
+
 
     <input type="submit">
     </form>

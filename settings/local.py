@@ -1,5 +1,5 @@
 
-from wwwdocker.settings.base import *
+from settings.base import *
 
 DATABASES = {
     'default': {

@@ -86,17 +86,17 @@
 
             <ul class="nav nav-login pull-right">
 
-                {% if user.is_authenticated %}
+{#                {% if user.is_authenticated %}#}
 {#                    <li><a href="{% url 'profile_home' %}">{{ user }}</a></li>#}
 {#                    <li><a href="{% url 'logout' %}">logout</a></li>#}
-                    {% if user.is_staff %}
+{#                    {% if user.is_staff %}#}
 {#                        <li><a href="{% url 'admin:index' %}">admin</a></li>#}
-                    {% endif %}
-                {% else %}
+{#                    {% endif %}#}
+{#                {% else %}#}
 {#                    <li class="active"><a href="{% url 'signup' %}">signup</a></li>#}
 {#                    <li><a href="{% url 'login' %}">login</a></li>#}
 
-                {% endif %}
+{#                {% endif %}#}
             </ul>
         </div>
     </div>

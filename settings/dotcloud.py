@@ -1,5 +1,5 @@
 # settings/dotcloud.py
-from wwwdocker.settings.base import *
+from settings.base import *
 
 print "using dotcloud settings"
 
