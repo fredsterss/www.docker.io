@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+
+username is {{ username }}
+
+
+<form method="POST" target="">
+    {% csrf_token %}
+    {{ form }}
+    <input type="text" name="username">
+    <button type="submit">submit</button>
+    <button type="button" id="ajax">ajax submit</button>
+</form>
+
+<div id="result">result div</div>
+
+<script type="text/javascript">
+
+    var ajax_load = "loading......";
+    var loadUrl = "/tutorial/api/";
+
+    $("#ajax").click(function(){
+        $("#result").html(ajax_load);
+        $.post(
+            loadUrl,
+            {
+                type: "start",
+                question: 1
+            },
+            function(responseText){
+                $("#result").html(responseText);
+            },
+            "html"
+        );
+    });
+</script>
+
+
+{#  EVENT_TYPES = (#}
+{#        ('start', 'Start tutorial'),#}
+{#        ('command', 'Command given'),#}
+{#        ('next', 'Next Questions'),#}
+{#        ('feedback', 'Feedback'),#}
+{#        ('complete', 'Tutorial Complete'),#}
+{#    )#}
+{##}
+{#    user = models.ForeignKey(TutorialUser)#}
+{#    event_type = models.CharField(max_length=15, choices=EVENT_TYPES)#}
+{#    timestamp = models.DateTimeField(auto_now=True)#}
+{#    question = models.IntegerField(null=True)#}
+{#    command_given = models.CharField(max_length=80, blank=True, default="")#}
+
+
+</body>
+</html>

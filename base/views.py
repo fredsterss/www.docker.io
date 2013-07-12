@@ -17,7 +17,7 @@ def home(request):
     """
     form = NewsSubscribeForm()
 
-    return render_to_response("home/home.html", {
+    return render_to_response("base/home.html", {
         "form": form,
         }, context_instance=RequestContext(request))
 
@@ -55,7 +55,7 @@ def email_thanks(request):
                 #        'github_name': 'dhrp2',
             }
 
-            return render_to_response('home/email_thanks.html',
+            return render_to_response('base/email_thanks.html',
                 {
                     'form': form,
                     'intercom_extra': intercom_extra
@@ -65,7 +65,7 @@ def email_thanks(request):
     else:
         form = NewsSubscribeForm()
 
-    return render_to_response("home/home.html", {
+    return render_to_response("base/home.html", {
         "form": form,
         }, context_instance=RequestContext(request))
 

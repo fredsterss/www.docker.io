@@ -38,7 +38,16 @@ p {
 }
 
 p a {
-//	text-decoration: underline;
+	text-decoration: underline;
+}
+
+a {
+//  text-decoration: underline;
+
+}
+
+.brand.logo a {
+  text-decoration: none;
 }
 
 
@@ -90,7 +99,6 @@ p a {
 
 }
 
-
 // Bootstrap elements
 // ----------------------------------
 
@@ -100,26 +108,36 @@ p a {
 
 .container {
 	// background-color: green;
-
 }
 
 // Styles on blocks of content
 // ----------------------------------
 
 // everything which is a block should have box-sizing: border-box;
+
+//.box .tbox {
+//  div[class*='span']
+//  {
+//    -moz-box-sizing: border-box;
+//    box-sizing: border-box;
+//    padding: @boxPaddingSize;
+//
+//    div {
+//      margin: -@boxPaddingSize;
+//    }
+//  }
+//}
+
 div[class*='span']
 {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: @boxPaddingSize;
-
-	div {
-		margin: -@boxPaddingSize;
-	}
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 
 // Box for making white with a border, and some nice spacings
 .box {
+    padding: @boxPaddingSize;
 	background-color: white;
 	margin-top: @boxTopMargin;
 	border: 1px solid black;
@@ -135,7 +153,7 @@ div[class*='span']
 .tbox.fleft {
 	position: relative;
 	float: left;
-} 
+}
 
 // Transparent box, floating right
 .tbox.fright {
@@ -153,7 +171,7 @@ div[class*='span']
 	padding: @boxPaddingSize;
 }
 
-.box div {
+.box.div {
   padding: @boxPaddingSize;
 }
 
@@ -187,10 +205,18 @@ div[class*='span']
   font-size: @fontSizeSmall;
 }
 
+.modal-backdrop {
+  opacity: 0.4;
+}
+
 
 /* =======================
    Social footer
 ======================= */
+
+.social {
+  margin-left: 0px;
+}
 
 .social .twitter, .social .github, .social .googleplus {
   background: url("../img/footer-links.png") no-repeat transparent;
@@ -226,8 +252,8 @@ form table {
   }
 }
 
-.dtform {
-  label {
+form {
+  .labeldd label {
     font-weight: bold;
   }
 
@@ -359,21 +385,21 @@ footer, .footer {
 // ----------------------------------- // ----------------------------------- 
 
 .repotop .reponameblock{
-	margin-right: 35px; // this also has to compensate for the negative -15 
+	margin-right: 20px; // this also has to compensate for the negative -15
 }
 
 .repotop .tbox .topexpl {
 	font-size: 12pt;
 	color: gray;
 }
-
+//
 .repotop .tbox h2 {
 	margin-top: 0px;
 }
-
+//
 .reponav {
-	margin-top: -5px;
-	margin-bottom: -5px;
+	margin-top: -8px;
+//	margin-bottom: -5px;
 }
 
 
@@ -381,7 +407,7 @@ footer, .footer {
    height: 35px;
    font-size: 18px;
    line-height: 14px;
-   margin-top: 15px;
+   margin-top: 4px;
 }
 
 
@@ -403,6 +429,18 @@ footer, .footer {
   width: 400px;
 }
 
+#reponamefield div.popover, #reponamefield div.popover div , #reponamefield div.popover div div {
+
+   padding: 3px 10px 10px 10px;
+   margin: 0px;
+   margin-top: 10px;
+   line-height: 1.5em;
+}
+
+#reponamefield .arrow {
+  display: none;
+}
+
 
 // Styles specifically for the profile pages
 // ----------------------------------- // -----------------------------------
@@ -417,3 +455,49 @@ footer, .footer {
   }
 }
 
+
+.profilenav {
+  .btn {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+// Styles specifically for the Builds
+// ----------------------------------- // -----------------------------------
+.repo-list {
+  li {
+    list-style: none;
+    line-height: 3.2em;
+  }
+}
+
+.blocktop {
+
+}
+
+.blockbody {
+  margin-top: 0px !important;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #898989;
+}
+
+.topactionbar {
+  border-bottom: 1px grey solid;
+  margin-top: -15px;
+  padding-bottom: 0px;
+//  text-align: right;
+  .btn {
+    margin-left: 5px;
+  }
+  h4 {
+    display: inline;
+    color: @linkBlue;
+  }
+
+}

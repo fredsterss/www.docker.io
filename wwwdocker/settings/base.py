@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
@@ -95,7 +95,13 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 
 # We store the secret key in our environment variables.
-SECRET_KEY = os.environ['SECRET_KEY']
+try:
+    SECRET_KEY = os.environ['SECRET_KEY']
+except KeyError as e:
+    print "Secret key not found, using a default key, please set the SECRET_KEY in your environment"
+    SECRET_KEY = "ABCDEFG22"
+    pass
+
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -133,7 +139,7 @@ PREREQ_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # 'south',
     'django_extensions',
     'intercom',
@@ -142,7 +148,8 @@ PREREQ_APPS = (
 )
 
 PROJECT_APPS = (
-    'home',
+    'base',
+    'tutorial'
 )
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS

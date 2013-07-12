@@ -4,6 +4,12 @@
 body {
   margin-top: 0px;
 }
+p a {
+  text-decoration: underline;
+}
+.brand.logo a {
+  text-decoration: none;
+}
 .navbar .navbar-inner {
   padding-left: 0px;
   padding-right: 0px;
@@ -40,12 +46,9 @@ body {
 div[class*='span'] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 15px;
-}
-div[class*='span'] div {
-  margin: -15px;
 }
 .box {
+  padding: 15px;
   background-color: white;
   margin-top: 8px;
   border: 1px solid black;
@@ -70,7 +73,7 @@ div[class*='span'] div {
 .nested {
   padding: 15px;
 }
-.box div {
+.box.div {
   padding: 15px;
 }
 .forcetopalign {
@@ -94,9 +97,15 @@ div[class*='span'] div {
 .textsmaller {
   font-size: 11.9px;
 }
+.modal-backdrop {
+  opacity: 0.4;
+}
 /* =======================
    Social footer
 ======================= */
+.social {
+  margin-left: 0px;
+}
 .social .twitter,
 .social .github,
 .social .googleplus {
@@ -119,18 +128,18 @@ form table th {
   text-align: right;
   white-space: nowrap;
 }
-.dtform label {
+form .labeldd label {
   font-weight: bold;
 }
-.dtform .helptext {
+form .helptext {
   font-size: 11.9px;
   margin-top: -4px;
   margin-bottom: 10px;
 }
-.dtform .fielddd input {
+form .fielddd input {
   width: 250px;
 }
-.dtform .error {
+form .error {
   color: #a30000;
 }
 div.alert.alert-block {
@@ -204,7 +213,7 @@ footer .ligaturesymbols a,
   font-size: 11.9px;
 }
 .repotop .reponameblock {
-  margin-right: 35px;
+  margin-right: 20px;
 }
 .repotop .tbox .topexpl {
   font-size: 12pt;
@@ -214,14 +223,13 @@ footer .ligaturesymbols a,
   margin-top: 0px;
 }
 .reponav {
-  margin-top: -5px;
-  margin-bottom: -5px;
+  margin-top: -8px;
 }
 #reponamefield label {
   height: 35px;
   font-size: 18px;
   line-height: 14px;
-  margin-top: 15px;
+  margin-top: 4px;
 }
 #reponamefield input[type="text"] {
   height: 35px;
@@ -236,10 +244,49 @@ footer .ligaturesymbols a,
 .fullwidtharea {
   width: 400px;
 }
+#reponamefield div.popover,
+#reponamefield div.popover div,
+#reponamefield div.popover div div {
+  padding: 3px 10px 10px 10px;
+  margin: 0px;
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+#reponamefield .arrow {
+  display: none;
+}
 .profile-summary h3 {
   margin-top: 10px;
 }
 .profile-summary ul {
   list-style: none;
   margin-left: 10px;
+}
+.profilenav .btn {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.repo-list li {
+  list-style: none;
+  line-height: 3.2em;
+}
+.blockbody {
+  margin-top: 0px !important;
+}
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #898989;
+}
+.topactionbar {
+  border-bottom: 1px grey solid;
+  margin-top: -15px;
+  padding-bottom: 0px;
+}
+.topactionbar .btn {
+  margin-left: 5px;
+}
+.topactionbar h4 {
+  display: inline;
+  color: #213b8f;
 }
