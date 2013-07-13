@@ -50,8 +50,7 @@ def api(request):
     if request.method == "POST":
         event = TutorialEvent.objects.create(user=user)
         # event.user ; is set at instantiation
-        event.type = request.POST.get('type', None)
-        event.type = request.POST.get('question', TutorialEvent.NONE)
+        event.type = request.POST.get('type', TutorialEvent.NONE)
         # event.timestamp ; is automatically set
         event.question = request.POST.get('question', None)
         event.command = request.POST.get('command', "")
