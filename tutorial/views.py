@@ -5,8 +5,6 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-
-from .forms import UserNameForm
 from .models import *
 
 from django.contrib.sessions.models import Session
@@ -22,12 +20,10 @@ def endpoint(request):
         }, context_instance=RequestContext(request))
 
 
-@csrf_exempt
 def testpage(request):
     """
     testing saving stuff on a users' session
     """
-
 
     username = request.session.get('username', 'unknown')
     print username
@@ -35,7 +31,7 @@ def testpage(request):
     return render_to_response("tutorial/testpage.html", {
         # "form": form,
         'username': username
-        }, context_instance=RequestContext(request))
+    }, context_instance=RequestContext(request))
 
 
 @csrf_exempt
@@ -53,17 +49,14 @@ def api(request):
 
     if request.method == "POST":
         event = TutorialEvent.objects.create(user=user)
-        # event.user = user
+        # event.user ; is set at instantiation
         event.type = request.POST.get('type', None)
-        # event.type = TutorialEvent.START
-        # event.type = "start"
+        event.type = request.POST.get('question', TutorialEvent.NONE)
         # event.timestamp ; is automatically set
         event.question = request.POST.get('question', None)
         event.command = request.POST.get('command', "")
         event.feedback = request.POST.get('feedback', "")
         event.save()
-
-        # print q
 
     session = request.session
     print session

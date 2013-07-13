@@ -1,13 +1,28 @@
 {% extends 'base_simple.html' %}
 {% load markdown_deux_tags %}
+{% load navactive %}
 
 {% block content %}
 
-Here comes some image
+Here comes some image, for example
+
+{#{% navactive request 'home' %}#}
 
 {% markdown %}
-{% block headline %}{% endblock %}
+    {% block headline %}{% endblock %}
 {% endmarkdown %}
+
+
+
+    <form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form }}
+
+
+
+    <input type="submit">
+    </form>
 
 
 {% endblock content %}
