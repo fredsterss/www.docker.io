@@ -29,7 +29,8 @@ def navactive(request, path, reverse_args=None):
             path = reverse(path, args=[reverse_args])
 
 
-    if request.path.endswith(path):
+    # if request.path.endswith(path):
+    if request.path == path:
         return "active"
     else:
         return ""

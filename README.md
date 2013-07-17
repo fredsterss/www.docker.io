@@ -18,6 +18,8 @@ This project uses a simplified Django structure, and has the notable feature tha
  website can be maintained by changing the markdown files contained in /_pages/. There is a good chance this will
  be the only part you need to touch.
 
+Files which can be edited have the .jmd extension. This is a concatenation between jinja2 and markdown.
+
 
 Simple installation
 -------------------
@@ -40,3 +42,11 @@ Most notable:
 
 * SECRET_KEY
 * MAILCHIMP_API_KEY
+
+
+About the .jmd files
+--------------------
+
+Using markdown-formatted text allows separation of content (tekst) and markup (html). The extension
+.jmd is a concatenation of jinja and markdown, and does not really exist elsewhere. Depending on your setup
+you might want to setup your editor to show the content with either markdown highlighting or jinja shortcuts.

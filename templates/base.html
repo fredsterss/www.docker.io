@@ -67,12 +67,13 @@
 {#            <div class="brand logo"><a href="/">DOCKER</a></div>#}
 
             <ul class="nav pull-right">
-                <li class="active"><a href="/">Home</a></li>
-                <li class="ACTIVE" %}"><a href="{% url 'about' %}">About</a></li>
-                <li><a href="/gettingstarted/">Getting started</a></li>
+                <li class="{%navactive request "/" %}"><a href="{% url 'home' %}">Home</a></li>
+                <li class="{%navactive request "about" %}"><a href="{% url 'about' %}">About</a></li>
+                <li class="{%navactive request "community" %}"><a href="{% url 'community' %}">Community</a></li>
+                <li class="{%navactive request "getting_started" %}"><a href="{% url 'getting_started' %}">Getting started</a></li>
                 <li><a href="http://docs.docker.io">Documentation</a></li>
-                <li><a href="/community">Community</a></li>
                 <li><a href="http://blog.docker.io">Blog</a></li>
+                <li><a href="http://index.docker.io">INDEX</a></li>
             </ul>
         </div>
     </div>

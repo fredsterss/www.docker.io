@@ -10,16 +10,20 @@
 
 
 {% block content %}
+
 <div class="container">
 <div class="row" >
     <div class="span12">
         <div id="top">
 
-            {% markdown %}
-            {% block copy_1 %}
+            {% markdown %}{% block copy_1 %}
                 <h1>Placeholder for content</h1>
-            {% endblock %}
-            {% endmarkdown %}
+            {% endblock %}{% endmarkdown %}
+
+            {% markdown %}{% block copy_2 %}
+                <h1>Placeholder for content</h1>
+            {% endblock %}{% endmarkdown %}
+
 
         </div>
 
@@ -27,5 +31,5 @@
     </div>
 </div>
 </div>
-{% endblock content %}
 
+{% endblock %}s

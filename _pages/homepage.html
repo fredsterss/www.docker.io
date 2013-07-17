@@ -1,28 +1,61 @@
-{% extends 'base_simple.html' %}
-{% load markdown_deux_tags %}
-{% load navactive %}
+{% extends 'base.html' %}
+{% load markdown_deux_tags %}{% load staticfiles %}
+
 
 {% block content %}
 
-Here comes some image, for example
 
-{#{% navactive request 'home' %}#}
+<div class="container">
+<div class="row" >
+    <div class="span12 text-center">
+        <div id="top">
 
-{% markdown %}
-    {% block headline %}{% endblock %}
-{% endmarkdown %}
+            {% markdown %}{% block copy_headline %}Placeholder for content
+            {% endblock %}{% endmarkdown %}
+
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="span12 text-center">
+
+    </div>
+</div>
 
 
+<div class="row" >
+    <div class="span12 text-center">
+        <img src="{% static 'img/docker_logo_med_transparent.png' %}"
+    </div>
+</div>
 
-    <form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">
+<div class="row" >
+    <div class="span12 text-center">
+        {% markdown %}{% block copy_introduction %}Placeholder for content
+        {% endblock %}{% endmarkdown %}
+    </div>
+</div>
+
+<div class="row" >
+    <div class="span8 offset2">
+        {% markdown %}{% block copy_news %}Placeholder for content
+        {% endblock %}{% endmarkdown %}
+    </div>
+</div>
+
+</div> <!-- end container -->
+
+
+{#{% block tweets %}#}
+{#{% endblock tweets %}#}
+
+
+<form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">
     {% csrf_token %}
-
     {{ form }}
-
-
-
     <input type="submit">
-    </form>
+</form>
 
 
 {% endblock content %}
