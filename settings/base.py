@@ -211,6 +211,20 @@ LOGGING = {
 
 
 
+# see https://github.com/trentm/django-markdown-deux for optional markdown settings
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": None,
+    },
+}
+
+
+
+
 # analytics and tracking settings
 # intercom
 INTERCOM_APPID = "gynyw9xf"

@@ -27,6 +27,28 @@ Tuesday July 30, we will have another Docker hackday. This time we feature a cou
 * **mr from eBay**, talking about what he does there.
 
 
+
+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+    <tr>
+
+        <td>Bar</td>
+    </tr>
+    <tr>
+
+        <td>Foo</td>
+    </tr>
+    <tr>
+
+        <td>Bar</td>
+
+    </tr>
+</table>
+
+
 {% endblock %}
 
 

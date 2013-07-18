@@ -17,7 +17,7 @@ def home(request):
     """
     form = NewsSubscribeForm()
 
-    return render_to_response("homepage.jmd", {
+    return render_to_response("homepage.md", {
         "form": form,
     }, context_instance=RequestContext(request))
 
@@ -65,7 +65,7 @@ def email_thanks(request):
     else:
         form = NewsSubscribeForm()
 
-    return render_to_response("homepage.jmd", {
+    return render_to_response("homepage.md", {
         "form": form,
         }, context_instance=RequestContext(request))
 
