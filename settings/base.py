@@ -131,12 +131,18 @@ MIDDLEWARE_CLASSES = (
 
 # Local memory caching. We only have a couple of non-dynamic pages, but they are
 # being generated dynamically... So, we might as well cache the whole thing in memory.
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-#         'LOCATION': 'unique-snowflake'
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake'
+    },
+    'disk_cache': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': PROJECT_ROOT.child('cache'),
+    }
+}
+
+
 
 # CACHE_MIDDLEWARE_ALIAS = default
 # CACHE_MIDDLEWARE_SECONDS = 600 # default

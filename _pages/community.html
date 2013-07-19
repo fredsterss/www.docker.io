@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_www.html' %}
 {% load navactive %}{% load markdown_deux_tags %}
 
 
@@ -13,8 +13,17 @@
 
 <div class="container">
 <div class="row" >
-    <div class="span12">
-        <div id="top">
+    <div class="span12 text-center">
+        <div class="copy-headline">
+            {% markdown %}{% block copy_headline %}
+                <h1>Placeholder for content</h1>
+            {% endblock %}{% endmarkdown %}
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="span12 paper">
+        <div id="" class="span8 offset2">
 
             {% markdown %}{% block copy_1 %}
                 <h1>Placeholder for content</h1>
@@ -23,13 +32,9 @@
             {% markdown %}{% block copy_2 %}
                 <h1>Placeholder for content</h1>
             {% endblock %}{% endmarkdown %}
-
-
         </div>
-
-
     </div>
 </div>
 </div>
 
-{% endblock %}s
+{% endblock %}

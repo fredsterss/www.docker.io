@@ -13,6 +13,8 @@ eggs
 htmlcov
 .idea
 .dotcloud
+node_modules
+
 
 # the packages required to build bootstrap
 docker_index/assets/css/sources/node_modules

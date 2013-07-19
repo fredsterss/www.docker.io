@@ -8,8 +8,10 @@
 // Variables for main.less
 // -----------------------
 
-@boxTopMargin: 			8px;
-@boxPaddingSize:			15px;
+@boxTopMargin: 			    8px;
+@boxPaddingSize:			30px;
+@dockerBackgroundColor:     #71AFC0;
+@veryDarkSeaGreen:          #394D54;
 
 
 .debug {
@@ -30,7 +32,7 @@
 
 // moving body down to make place for fixed navigation
 body {
-	margin-top: 0px;
+	margin-top: @navbarHeight;
 }
 
 p {
@@ -56,11 +58,11 @@ a {
 .navbar .navbar-inner {
 	padding-left: 0px;
 	padding-right: 0px;
-	margin-top: -1px;
+//	margin-top: -1px;
 }
 
 .navbar .navbar-inner .container {
-  width: 952px; 
+//  width: 952px;
 }
 
 .navbar .brand {
@@ -68,15 +70,15 @@ a {
 	float: left;
 	display: block;
 	// Vertically center the text given @navbarHeight
-	padding: ((@navbarHeight - @baseLineHeight) / 2) 20px ((@navbarHeight - @baseLineHeight) / 2);
-	font-size: 20px;
-	font-weight: 200;
-	color: @deepRed;
-	text-shadow: 0 1px 0 @navbarBackgroundHighlight;
-	&:hover,
-	&:focus {
-		text-decoration: none;
-	}
+//	padding: ((@navbarHeight - @baseLineHeight) / 2) 20px ((@navbarHeight - @baseLineHeight) / 2);
+//	font-size: 20px;
+//	font-weight: 200;
+//	color: @deepRed;
+//	text-shadow: 0 1px 0 @navbarBackgroundHighlight;
+//	&:hover,
+//	&:focus {
+//		text-decoration: none;
+//	}
 }
 
 .brand.logo a {
@@ -85,8 +87,18 @@ a {
 }
 
 .logo {
-	background-color: #A30000;
-	color: white;
+//	background-color: #A30000;
+//	color: white;
+}
+
+.navbar .nav li a {
+  	padding: ((@navbarHeight - @baseLineHeight) / 2) 20px ((@navbarHeight - @baseLineHeight) / 2);
+}
+
+
+.nav-underline {
+  height: 6px;
+  background-color: @dockerBackgroundColor;
 }
 
 .nav-login {
@@ -94,9 +106,12 @@ a {
    	a {
 		color: white;
 		padding: 10px 15px 10px;
-	}	
+	}
   }
+}
 
+.inline-icon {
+  margin-bottom: 6px;
 }
 
 // Bootstrap elements
@@ -115,19 +130,6 @@ a {
 
 // everything which is a block should have box-sizing: border-box;
 
-//.box .tbox {
-//  div[class*='span']
-//  {
-//    -moz-box-sizing: border-box;
-//    box-sizing: border-box;
-//    padding: @boxPaddingSize;
-//
-//    div {
-//      margin: -@boxPaddingSize;
-//    }
-//  }
-//}
-
 div[class*='span']
 {
   -moz-box-sizing: border-box;
@@ -137,11 +139,26 @@ div[class*='span']
 
 // Box for making white with a border, and some nice spacings
 .box {
+//    .debug;
     padding: @boxPaddingSize;
 	background-color: white;
 	margin-top: @boxTopMargin;
-	border: 1px solid black;
 }
+
+.paper {
+  	background-color: white;
+    padding-top: 30px;
+}
+
+.copy-headline {
+  margin-top: 20px;
+}
+
+.paper h1 {
+//  background-color: darkred;
+//  background-position: -100px;
+}
+
 
 // Transparent box, same properties as box, but no background or border
 .tbox {
@@ -208,6 +225,14 @@ div[class*='span']
 .modal-backdrop {
   opacity: 0.4;
 }
+
+
+/* generic page copy styles */
+
+.copy-headline h1 {
+  font-size: 24px;
+}
+
 
 
 /* =======================
@@ -296,208 +321,53 @@ footer, .footer {
 	}
 }
 
-
-
-// Styles specifically for the homepage
-// ----------------------------------- // -----------------------------------
-
-.featured {
-  ol {
-    list-style: none;
-    margin-left: 0px;
-  }
-  h5 {
-    margin-left: -10px;
-  }
-  p {
-    margin-top: -5px;
-  }
-}
-
-.searchblock {
-  margin-top: 150px;
-  margin-bottom: 150px;
-
-  h1 {
-    margin-left: -10px;
-  }
-
-  p {
-    margin-top: 0px;
-  }
-}
-
-.dockerintro {
-//  margin-bottom: 80px;
-//  padding: 15px;
-//  padding-top: 30px;
-}
-
-
-// Styles specifically for the search
-// ----------------------------------- // -----------------------------------
-
-#searchbox input[type="text"] {
-  height: 35px;
-  font-size: 22px;
-  margin-right: 0px;
-
-  line-height: 25px;
-  padding-left: 10px;
-  border: 1px solid black;
-}
-
-#searchbox input[type="submit"] {
-  height: 44px;
-  font-size: 22px;
+.footer-landscape {
+  background-color: @dockerBackgroundColor;
   position: relative;
-  right: 0px;
-  float: right;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
+.footer-landscape-image {
+  background-image: url('../img/website-footer.svg');
+  background-repeat: repeat-x;
+//  background-size: 100%;
+  height: 200px;
 }
 
 
-.searchresults {
-  ol li {
-    display: block;
-    list-style: none;
-    margin-left: -15px;
-    margin-top: 20px;
+// Styles for the homepage
+// ----------------------------------
+
+#top {
+  background-color: @dockerBackgroundColor;
+  position: relative;
+  left: 0;
+  right: 0;
+//  width: 100%;
+}
+
+#main-image {
+//  width: 500px;
+
+}
+
+.main-banner {
+  padding: 15px;
+}
+
+.main-introduction {
+  margin-top: 15px;
+}
+
+.tweets-block {
+  height: 200px;
+  background-color: white;
+  border: 3px @veryDarkSeaGreen solid;
+  overflow-y: scroll;
+
+  .tweet {
+    margin: 10px;
   }
-  h3 a {
-    text-decoration: underline;
-  }
-  p {
-    font-size: @baseFontSize * 1.10; // ~14px
-    margin-top: -5px;
-  }
-
-  .date {
-    margin-top: -4px;
-    font-size: @fontSizeSmall;
-  }
-}
-
-
-
-
-// Styles specifically for the repository pages
-// ----------------------------------- // ----------------------------------- 
-
-.repotop .reponameblock{
-	margin-right: 20px; // this also has to compensate for the negative -15
-}
-
-.repotop .tbox .topexpl {
-	font-size: 12pt;
-	color: gray;
-}
-//
-.repotop .tbox h2 {
-	margin-top: 0px;
-}
-//
-.reponav {
-	margin-top: -8px;
-//	margin-bottom: -5px;
-}
-
-
-#reponamefield label {
-   height: 35px;
-   font-size: 18px;
-   line-height: 14px;
-   margin-top: 4px;
-}
-
-
-#reponamefield input[type="text"] {
-   height: 35px;
-   font-size: 22px;
-   line-height: 14px;
-}
-
-
-#reponamefield input[type="button"] {
-   height: 45px;
-   font-size: 22px;
-   line-height: 14px;
-}
-
-
-.fullwidtharea {
-  width: 400px;
-}
-
-#reponamefield div.popover, #reponamefield div.popover div , #reponamefield div.popover div div {
-
-   padding: 3px 10px 10px 10px;
-   margin: 0px;
-   margin-top: 10px;
-   line-height: 1.5em;
-}
-
-#reponamefield .arrow {
-  display: none;
-}
-
-
-// Styles specifically for the profile pages
-// ----------------------------------- // -----------------------------------
-.profile-summary {
-  h3 {
-    margin-top: 10px;
-  }
-
-  ul {
-    list-style: none;
-    margin-left: 10px;
-  }
-}
-
-
-.profilenav {
-  .btn {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
-
-
-// Styles specifically for the Builds
-// ----------------------------------- // -----------------------------------
-.repo-list {
-  li {
-    list-style: none;
-    line-height: 3.2em;
-  }
-}
-
-.blocktop {
-
-}
-
-.blockbody {
-  margin-top: 0px !important;
-}
-
-a.disabled {
-  pointer-events: none;
-  cursor: default;
-  color: #898989;
-}
-
-.topactionbar {
-  border-bottom: 1px grey solid;
-  margin-top: -15px;
-  padding-bottom: 0px;
-//  text-align: right;
-  .btn {
-    margin-left: 5px;
-  }
-  h4 {
-    display: inline;
-    color: @linkBlue;
-  }
-
 }

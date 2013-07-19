@@ -50,3 +50,24 @@ About the .jmd files
 Using markdown-formatted text allows separation of content (tekst) and markup (html). The extension
 .jmd is a concatenation of jinja and markdown, and does not really exist elsewhere. Depending on your setup
 you might want to setup your editor to show the content with either markdown highlighting or jinja shortcuts.
+
+
+
+Building CSS from LESS
+-----------------------
+We build our css from less, and we (heavily) customize bootstrap. The goal is to always have a working .css file
+in the repository, so when you check it out you should not need to build the css. If, however you want to make
+changes to it:
+
+* Make changes to main.less (preferred over changing bootstrap's .less files
+* Compile this using your favorite tool like recess or LiveReload
+
+If you do make changes to the Bootstrap variables which should be reflected in the bootstrap-custom
+* Find the makefile in the sources dir
+* In that directory run npm install to install the required build libraries
+* Run 'make docker-css' to compile the styles to bootsrap-custom
+
+OR, if it mysteriously fails
+
+lessc sources/less/bootstrap.less > bootstrap-custom.css
+

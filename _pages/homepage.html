@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_www.html' %}
 {% load markdown_deux_tags %}{% load staticfiles %}
 
 
@@ -12,58 +12,61 @@ tr:nth-child(even)    { background-color: #f5f5f5; }
 </style>
 
 
-<div class="container">
-<div class="row" >
-    <div class="span12 text-center">
-        <div id="top">
+<div class="">
+    <div id="top"  class="main-banner" >
+        <div class="text-center ">
+            <div class="copy-headline">
 
-            {% markdown %}{% block copy_headline %}Placeholder for content
-            {% endblock %}{% endmarkdown %}
+                {% markdown %}{% block copy_headline %}Placeholder for content
+                {% endblock %}{% endmarkdown %}
 
+                <img id="main-image" src="{% static 'img/homepage-docker-logo.png' %}">
+            </div>
         </div>
     </div>
 </div>
 
-<div class="row" >
-    <div class="span12 text-center">
+<div class="container">
+    <div class="row " >
+        <div class="span12 text-center main-introduction">
 
+            {% markdown %}{% block copy_introduction %}Placeholder for content
+            {% endblock %}{% endmarkdown %}
+        </div>
     </div>
-</div>
 
-
-<div class="row" >
-    <div class="span12 text-center">
-        <img src="{% static 'img/docker_logo_med_transparent.png' %}"
+    <div class="row" >
+        <div class="span8 offset2">
+            {% markdown %}{% block copy_news %}Placeholder for content
+            {% endblock %}{% endmarkdown %}
+        </div>
     </div>
-</div>
 
-<div class="row" >
-    <div class="span12 text-center">
-        {% markdown %}{% block copy_introduction %}Placeholder for content
-        {% endblock %}{% endmarkdown %}
+    <div class="span10 offset1 tweets-block">
+        {% block tweets %}{% endblock %}
     </div>
-</div>
 
-<div class="row" >
-    <div class="span8 offset2">
-        {% markdown %}{% block copy_news %}Placeholder for content
-        {% endblock %}{% endmarkdown %}
-    </div>
-</div>
+{#        <div class="tweet">#}
+{#            <img src="https://si0.twimg.com/profile_images/2707460527/252a64411a339184ff375a96fb68dcb0_bigger.png">#}
+{#            <em>Mitchell Hashimoto ‏@mitchellh:</em> Docker launched today. It is incredible. They’re also working RIGHT NOW on a Vagrant provider. LXC is COMING!!#}
+{#        </div>#}
+
+
 
 </div> <!-- end container -->
 
 
 {#{% block tweets %}#}
 {#{% endblock tweets %}#}
-
-
-<form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit">
-</form>
+{##}
+{##}
+{#<form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">#}
+{#    {% csrf_token %}#}
+{#    {{ form }}#}
+{#    <input type="submit">#}
+{#</form>#}
 
 
 {% endblock content %}
+
 

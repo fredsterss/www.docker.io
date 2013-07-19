@@ -1,11 +1,18 @@
 {% extends 'about.html' %}
 {% block title %} About Docker {% endblock %}
+{% block meta-description %}An open source project to pack, ship and run any application as a lightweight container{% endblock %}
+{% block meta-keywords %}Docker, linux containers, PaaS, dotCloud, introduction, about, how it works{% endblock %}
+
+
+{% block copy_headline %}
+# Learn what Docker is all about #
+{% endblock %}
 
 {% block copy_1 %}
 
-# DOCKER: AN INTRODUCTION
+# Docker: An introduction
 
-## ABOUT DOCKER
+## About Docker
 
 Docker  is an open-source engine that automates the deployment of any application as a lightweight, portable, self-sufficient container that will run virtually anywhere.
 
@@ -18,7 +25,7 @@ Common use cases for Docker include:
 *   Automated testing and continuous integration/deployment
 *   Deploying and scaling web apps, databases and backend services
 
-## BACKGROUND
+## Background
 	
 Fifteen years ago, virtually all applications were written using well defined stacks of services and deployed on a single monolithic, proprietary server. Today, developers build and assemble applications using a multiplicity of the best available services, and must be prepared for those applications to be deployed across a multiplicity of different hardware environments, included public, private, and virtualized servers.
 
@@ -71,6 +78,90 @@ In other words, developers can build their application once, and then know that 
 ## What are the Main Features of Docker
 
 It is useful to compare the main features of Docker to those of shipping containers. (See the analogy above).
+
+<table class="docker_main_features_table">
+	<thead>
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				Physical Containers
+			</td>
+			<td>
+				Docker
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				Content Agnostic
+			</td>
+			<td>
+				The same container can hold almost any kind of cargo
+			</td>
+			<td>
+				Can encapsulate any payload and its dependencies
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				Hardware Agnostic
+			</td>
+			<td>
+				Standard shape and interface allow same container to move from ship to train to semi-truck to warehouse to crane without being modified or opened
+			</td>
+			<td>
+				Using operating system primitives (e.g. LXC) can run consistently on virtually any hardware - VMs, bare metal, openstack, public IAAS, etc. - without modification
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				Content Isolation and Interaction
+			</td>
+			<td>
+				No worry about anvils crushing bananas. Containers can be stacked and shipped together
+			</td>
+			<td>
+				Resource, network, and content isolation. Avoids dependency hell
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				Automation
+			</td>
+			<td>
+				Standard interfaces make it easy to automate loading, unloading, moving, etc.
+			</td>
+			<td>
+				Standard operations to run, start, stop, commit, search, etc. Perfect for devops: CI, CD, autoscaling, hybrid clouds
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				Highly efficient
+			</td>
+			<td>
+				No opening or modification, quick to move between waypoints
+			</td>
+			<td>
+				Lightweight, virtually no perf or start-up penalty, quick to move and manipulate
+			</td>
+		</tr>		
+		<tr>
+			<td>
+				Separation of duties
+			</td>
+			<td>
+				Shipper worries about inside of box, carrier worries about outside of box
+			</td>
+			<td>
+				Developper worries about code, Ops worries about infrastructure.
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 Figure 7: Main Docker Features
 
@@ -136,119 +227,119 @@ Docker is a powerful tool for many different use cases. Here are some great earl
 <table class="docker_use_cases_table">
 	<thead>
 		<tr>
-			<td class="td1">
+			<td>
 				Use Case
 			</td>
-			<td class="td2">
+			<td>
 				Examples
 			</td>
-			<td class="td3">
+			<td>
 				Link
 			</td>
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="tr_white">
-			<td class="td1">
+		<tr>
+			<td>
 				Build your own PaaS
 			</td>
-			<td class="td2">
+			<td>
 				Dokku - Docker powered mini-Heroku. The smallest PaaS implementation you’ve ever seen
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/191Tgsx">http://bit.ly/191Tgsx</a>
 			</td>
 		</tr>
-		<tr class="tr_blue">
-			<td class="td1">
+		<tr>
+			<td>
 				Web Based Environment for Instruction
 			</td>
-			<td class="td2">
+			<td>
 				JiffyLab – web based environment for the instruction, or lightweight use of, Python and UNIX shell
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/12oaj2K">http://bit.ly/12oaj2K</a>
 			</td>				
 		</tr>
-		<tr class="tr_white">
-			<td class="td1" rowspan=3>
+		<tr>
+			<td rowspan=3>
 				Easy Application Deployment
 			</td>
-			<td class="td2">
+			<td>
 				Deploy Java Apps With Docker = Awesome
 			</td>
-			<td class="td3">
+			<td >
 				<a href="http://bit.ly/11BCvvux">http://bit.ly/11BCvvu</a>
 			</td>
 		</tr>
-		<tr class="tr_white">
-			<td class="td2">
+		<tr>
+			<td>
 				Running Drupal on Docker
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/15MJS6B">http://bit.ly/15MJS6B</a>
 			</td>
 		</tr>	
-		<tr class="tr_white">
-			<td class="td2">
+		<tr>
+			<td>
 				Installing Redis on Docker
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/16EWOKh">http://bit.ly/16EWOKh</a>
 			</td>
 		</tr>
-		<tr class="tr_blue">
-			<td class="td1">
+		<tr>
+			<td>
 				Create Secure Sandboxes
 			</td>
-			<td class="td2">
+			<td>
 				Docker makes creating secure sandboxes easier than ever
 			</td>
 			<td class="td3">
 				<a href="http://bit.ly/13mZGJH">http://bit.ly/13mZGJH</a>
 			</td>				
 		</tr>	
-		<tr class="tr_white">
-			<td class="td1">
+		<tr>
+			<td>
 				Create your own SaaS
 			</td>
-			<td class="td2">
+			<td>
 				Memcached as a Service
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/11nL8vh">http://bit.ly/11nL8vh</a>
 			</td>				
 		</tr>	
-		<tr class="tr_blue">
-			<td class="td1">
+		<tr>
+			<td>
 				Automated Application Deployment
 			</td>
-			<td class="td2">
+			<td>
 				Push-button Deployment with Docker
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/1bTKZTo">http://bit.ly/1bTKZTo</a>
 			</td>				
 		</tr>	
-		<tr class="tr_white">
-			<td class="td1">
+		<tr>
+			<td>
 				Continuous Integration and Deployment
 			</td>
-			<td class="td2">
+			<td>
 				Next Generation Continuous Integration &amp; Deployment with dotCloud’s Docker and Strider
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/ZwTfoy">http://bit.ly/ZwTfoy</a>
 			</td>				
 		</tr>
-		<tr class="tr_blue">
-			<td class="td1">
+		<tr>
+			<td>
 				Lightweight Desktop Virtualization
 			</td>
-			<td class="td2">
+			<td>
 				Docker Desktop: Your Desktop Over SSH Running Inside Of A Docker Container
 			</td>
-			<td class="td3">
+			<td>
 				<a href="http://bit.ly/14RYL6x">http://bit.ly/14RYL6x</a>
 			</td>				
 		</tr>					

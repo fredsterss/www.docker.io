@@ -1,0 +1,105 @@
+{%  comment  %}
+
+    author: Thatcher Peskens, July 2013
+
+    This stylesheet is loosely based on the stylesheets of the index.docker.io page.
+
+    Base template for all pages.
+    It includes header, footer and other things.
+
+    When extending this page, at a minimum your content should be wrapped in
+    <div class="container">     # not actually sure if we cannot remove this :-p
+    <div class="row">           # define row
+    <div class="span12">        # set the number of columns you want you block to use the total number
+                                # of available columns is 12
+{% endcomment %}{% load staticfiles %}{% load google_analytics %}{% load navactive %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <!-- [if it IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
+    <link rel="shortcut icon" href="{% static "favicon.png" %}" />
+    <title>
+        {% block title %}{% endblock title %}Docker, The linux container engine
+    </title>
+    <meta name="description" content="{% block meta-description %}{% endblock meta-description %}" />
+    <meta name="keywords" content="{% block meta-keywords %}{% endblock meta-keywords %}" />
+    {% block area-meta-author %}{% endblock area-meta-author %}
+    {% block extra-meta %}{% endblock %}
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-custom.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"> {% endblock stylesheets %}
+    <link href='//fonts.googleapis.com/css?family=Cabin:400,700,400italic' rel='stylesheet' type='text/css'>
+    {% block page_styles %}{% endblock page_styles %}
+    {% block js %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    {% endblock js %} {% block page_js %}{% endblock page_js %}
+    {% google_analytics %}
+</head>
+
+<body>
+
+
+<!-- navigation -->
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner navbar-fixed-top ">
+        <div class="container" >
+            <div class="brand logo"><img src="{% static 'img/docker-top-logo.png' %}"> </div>
+
+            <ul class="nav pull-right">
+                <li class="{%navactive request "/" %}"><a href="{% url 'home' %}">Home</a></li>
+                <li class="{%navactive request "about" %}"><a href="{% url 'about' %}">About</a></li>
+                <li class="{%navactive request "community" %}"><a href="{% url 'community' %}">Community</a></li>
+                <li class="{%navactive request "getting_started" %}"><a href="{% url 'getting_started' %}">Getting started</a></li>
+                <li><a href="http://docs.docker.io">Documentation</a></li>
+                <li><a href="http://blog.docker.io">Blog</a></li>
+                <li><a href="http://index.docker.io">INDEX <img class="inline-icon" src="{% static 'img/external-link-icon.png' %}" title="external link"> </a></li>
+            </ul>
+        </div>
+
+{#        <div class="nav-underline" ></div>#}
+    </div>
+</div>
+
+<!-- end of navigation -->
+
+
+{% block content %}
+{% endblock %}
+
+
+<!-- footer -->
+<div class="container">
+    <div class="row" >
+        <div class="span12 footer">
+            <div class="span8 tbox">
+                Docker and the Docker index are projects by <a href="http://dotcloud.com">dotCloud</a>
+            </div>
+
+            <div class="span4 tbox textright social links">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!-- end of footer -->
+
+
+<div class="footer-landscape"  >
+    <div class="footer-landscape-image" >
+{#        <img id="footer-landscape" src="{% static 'img/website-footer.svg' %}">#}
+    </div>
+</div>
+
+
+</body>

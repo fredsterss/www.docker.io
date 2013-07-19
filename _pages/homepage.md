@@ -1,7 +1,9 @@
 {% extends 'homepage.html' %}
+{% load list_tweets %}
+
 {% block title %}Homepage {% endblock %}
-
-
+{% block meta-description %}An open source project to pack, ship and run any application as a lightweight container{% endblock %}
+{% block meta-keywords %}Docker, linux containers, PaaS, dotCloud, introduction, about, homepage{% endblock %}
 
 {% block copy_headline %}
 
@@ -25,8 +27,6 @@ Docker is an open-source project which allows you to easily create lightweight, 
 Tuesday July 30, we will have another Docker hackday. This time we feature a couple of special guests.
 
 * **mr from eBay**, talking about what he does there.
-
-
 
 
 <table>
@@ -61,9 +61,14 @@ Tuesday July 30, we will have another Docker hackday. This time we feature a cou
 
 {% block tweets %}
 
-<blockquote class="twitter-tweet"><p>Push Into the Frontier - Discovering Myself in the Startup World - “By leaving behind your old self and... <a href="http://t.co/GbFlrdz97J">http://t.co/GbFlrdz97J</a></p>&mdash; Lean Startup Machine (@Lean) <a href="https://twitter.com/Lean/statuses/356842232613048320">July 15, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-https://twitter.com/Lean/status/356842232613048320
+{% list_tweets %}
+
+357945285164548096
+357983836006645760
+357673068086325248
+
+{% end_list_tweets %}
 
 {% endblock %}
+
