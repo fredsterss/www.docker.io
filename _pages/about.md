@@ -1,17 +1,16 @@
 {% extends 'about.html' %}
+{% load static %}
 {% block title %} About Docker {% endblock %}
 {% block meta-description %}An open source project to pack, ship and run any application as a lightweight container{% endblock %}
 {% block meta-keywords %}Docker, linux containers, PaaS, dotCloud, introduction, about, how it works{% endblock %}
+
 
 
 {% block copy_headline %}
 # Learn what Docker is all about #
 {% endblock %}
 
-{% block copy_1 %}
-
-# Docker: An introduction
-
+{% block copy_introduction %}
 ## About Docker
 
 Docker  is an open-source engine that automates the deployment of any application as a lightweight, portable, self-sufficient container that will run virtually anywhere.
@@ -25,9 +24,17 @@ Common use cases for Docker include:
 *   Automated testing and continuous integration/deployment
 *   Deploying and scaling web apps, databases and backend services
 
+{% endblock %}
+
+{#The table of contents will show up here #}
+
+{% block copy_1 %}
+
 ## Background
 	
 Fifteen years ago, virtually all applications were written using well defined stacks of services and deployed on a single monolithic, proprietary server. Today, developers build and assemble applications using a multiplicity of the best available services, and must be prepared for those applications to be deployed across a multiplicity of different hardware environments, included public, private, and virtualized servers.
+
+<img src="{% static 'img/about/evolution_of_it.jpg' %}" title="Evolution of IT.">
 
 Figure 1: The Evolution of IT
 
@@ -36,21 +43,31 @@ This sets up the possibility for:
 *   Adverse interactions between different services and "dependency hell"
 *   Challenges in rapidly migrating and scaling across different hardware*   The impossibility of managing a matrix of multiple different services deployed across multiple different types of hardware
 
-Figure 2: The Challenge of Multiple Stacks and Multiple Hardware Envrionments
+<img src="{% static 'img/about/??.jpg' %}" title="The Challenge of Multiple Stacks and Multiple Hardware Environments.">
+
+Figure 2: The Challenge of Multiple Stacks and Multiple Hardware Environments
 
 Or, viewed as a matrix, we can see that there is a huge number of combinations and permutations of applications/services and hardware environments that need to be considered every time an application is written or rewritten. This creates a difficult situation for both the developers who are writing applications and the folks in operations who are trying to create a scalable, secure, and highly performance operations environment.
+
+<img src="{% static 'img/about/matrix.jpg' %}" title="Dynamic Stacks and Dynamic Hardware Environments Create an NxN Matrix.">
 
 Figure 3: Dynamic Stacks and Dynamic Hardware Environments Create an NxN Matrix
 
 How to solve this problem? A useful analogy can be drawn from the world of shipping. Before 1960, most cargo was shipped break bulk. Shippers and carriers alike needed to worry about bad interactions between different types of cargo (e.g. if a shipment of anvils fell on a sack of bananas). Similarly, transitions between different modes of transport were painful. Up to half the time to ship something could be taken up as ships were unloaded and reloaded in ports, and in waiting for the same shipment to get reloaded onto trains, trucks, etc. Along the way, losses due to damage and theft were large. And, there was an n X n matrix between a multiplicity of different goods and a multiplicity of different transport mechanisms.
 
+<img src="{% static 'img/about/analogy.jpg' %}" title="Analogy: Shipping Pre-1960.">
+
 Figure 4: Analogy: Shipping Pre-1960
 
 Fortunately, an answer was found in the form of a standard shipping container.  Any type of goods, from pistachios to Porsches, can be packaged inside a standard shipping container. The container can then be sealed, and not re-opened until it reaches its final destination. In between, the containers can be loaded and unloaded, stacked, transported, and efficiently moved over long distances. The transfer from ship to gantry crane to train to truck can be automated, without requiring a modification of the container. Many authors credit the shipping container with revolutionizing both transportation and world trade in general. Today, 18 million standard containers carry 90% of world trade.
 
+<img src="{% static 'img/about/standard_container.png' %}" title="Solution to Shipping Challenge Was a Standard Container.">
+
 Figure 5: Solution to Shipping Challenge Was a Standard Container
 
 To some extent, Docker can be thought of as an intermodal shipping container system for code. 
+
+<img src="{% static 'img/about/docker_container.jpg' %}" title="The Solution to Software Shipping is Also a Standard Container System.">
 
 Figure 6: The Solution to Software Shipping is Also a Standard Container System
 
@@ -79,7 +96,7 @@ In other words, developers can build their application once, and then know that 
 
 It is useful to compare the main features of Docker to those of shipping containers. (See the analogy above).
 
-<table class="docker_main_features_table">
+<table class="docker_main_features_table table striped-table" >
 	<thead>
 		<tr>
 			<td>
@@ -224,7 +241,7 @@ Docker is an open-source implementation of the deployment engine which powers do
 
 Docker is a powerful tool for many different use cases. Here are some great early use cases for Docker, as described by members of our community.
 
-<table class="docker_use_cases_table">
+<table class="docker_use_cases_table table">
 	<thead>
 		<tr>
 			<td>

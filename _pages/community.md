@@ -11,13 +11,13 @@ get involved with the docker community by contributing and sharing
 
 {% block copy_1 %}
 
-# Contribute to the project #
+## Contribute##
 
 Join the thousands of developers who are helping to lead the Docker revolution! Joining our community is a great way to
 interact with other talented developers and devops professionals, increase awareness for the work that you are doing,
 improve your skills, or give back. Here are some of the ways that you can contribute to the Docker ecosystem.
 
-## Write Code ##
+### Write Code ###
 
 An Open Source project like Docker couldn’t exist without contributions from the developer community.
     As of June 30, 2013, there are over 100 contributors and nearly 400 forks on the project.
@@ -38,8 +38,18 @@ There are over 1,000 cool, containerized applications in our public Index.
 * Publish containers at the Index
 * Better yet, create a Dockerfile and put it in your repository, to make creation of new containers automatic
 
-### Work on Docker Full Time ###
-Want to work on Docker full time? Come look at our [jobs](http://dotcloud.theresumator.com/apply/) listing.
+### Work on Docker ###
+Like to hack on Docker? Work on it full time! Come look at our [jobs](http://dotcloud.theresumator.com/apply/) listing.
+
+## Share ##
+
+### Share your Experiences with Docker ###
+If you love Docker, tell others about it.
+
+* Tell your story at a company tech talk, tweet (#docker.io, @getdocker)  present at your local user group, or submit a
+    talk proposal to a conference or event about how you are using Docker
+* If you are using Docker,  in production, become a public reference like [these](http://blog.docker.io/2013/07/docker-projects-from-the-docker-community/)
+* Write a tutorial  like [these](http://blog.docker.io/2013/06/14-great-tutorials-on-docker/)
 
 ### Come to (or organize) a meetup ###
 
@@ -47,16 +57,7 @@ Docker meetups  are a great way to network, learn, share best practices, and hav
 
 * Find or organize a [meetup](http://www.meetup.com/Docker-meetups/)
 
-### Share your Experiences with Docker ###
-If you love Docker, consider telling others about it.
-
-* Tell your story at a company tech talk, tweet (#docker.io, @getdocker)  present at your local user group, or submit a
-    talk proposal to a conference or event about how you are using Docker
-* If you are using Docker,  in production, become a public reference like [these](http://blog.docker.io/2013/07/docker-projects-from-the-docker-community/) 
-* Write a tutorial  like [these](http://blog.docker.io/2013/06/14-great-tutorials-on-docker/)
-
-
-### Get in Touch ###
+## Get in Touch ##
 
 There are several ways to get in touch:
 

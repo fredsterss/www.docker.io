@@ -1,26 +1,34 @@
-{% extends 'base_www.html' %}
+{% extends 'base_www.html' %}{% load markdown_deux_tags %}
 
 {% block content %}
 
 <div class="container">
 <div class="row" >
-    <div class="span12">
-        <div id="top">
-
-            <h1>Getting started!</h1>
-
-            <h2 id="title">Quick install of docker</h2>
-            <p>bla </p><p>bla </p>
-
-            <h2 id="title">Docker interactive tutorial</h2>
-            <p>bla </p><p>bla </p>
-
+    <div class="span12 text-center">
+        <div class="copy-headline">
+            {% markdown %}{% block copy_headline %}
+                # Placeholder for content #
+            {% endblock %}{% endmarkdown %}
         </div>
-
-
-        {% include 'tutorial/snippet.html' %}
     </div>
 </div>
+<div class="row" >
+    <div class="span12 paper">
+        <div id="" class="span8 offset2">
+
+            {% markdown %}{% block copy_install %}
+            {% endblock %}{% endmarkdown %}
+
+            {% markdown %}{% block copy_hello_world %}
+            {% endblock %}{% endmarkdown %}
+
+            {% markdown %}{% block copy_user_guides %}
+            {% endblock %}{% endmarkdown %}
+
+        </div>
+    </div>
+</div>
+
 </div>
 
 {% endblock %}

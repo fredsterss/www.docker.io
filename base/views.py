@@ -21,26 +21,6 @@ def home(request):
     """
     form = NewsSubscribeForm()
 
-    CONSUMER_KEY = 'aEtFq69wvzUAjlzwh9Tw'
-    CONSUMER_SECRET = 'o6mcmOLtp35loXfUbRBOVpyfzenFdOSwBV3jd4MMFSM'
-    TWITTER_TIMEOUT = 3600
-
-    tweet = cache.get("316683059296624640")
-
-    if tweet:
-        pass
-    else:
-        twitter_client = TwitterClient(CONSUMER_KEY, CONSUMER_SECRET)
-        tweet = twitter_client.request('https://api.twitter.com/1.1/statuses/show.json?id=316683059296624640')
-
-        cache.set('316683059296624640', tweet, TWITTER_TIMEOUT)
-        data = json.loads(tweet)
-
-
-
-    print json.dumps(tweet, sort_keys=True, indent=4, separators=(',', ':'))
-
-
     return render_to_response("homepage.md", {
         "form": form,
     }, context_instance=RequestContext(request))

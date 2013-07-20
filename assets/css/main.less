@@ -33,7 +33,10 @@
 // moving body down to make place for fixed navigation
 body {
 	margin-top: @navbarHeight;
+//    padding-top: -@navbarHeight;
+//    margin-top: -70px;
 }
+
 
 p {
 	
@@ -118,7 +121,8 @@ a {
 // ----------------------------------
 
 .row {
-
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .container {
@@ -159,25 +163,6 @@ div[class*='span']
 //  background-position: -100px;
 }
 
-
-// Transparent box, same properties as box, but no background or border
-.tbox {
-	margin-top: @boxTopMargin;
-}
-
-
-// Transparent box, floating left
-.tbox.fleft {
-	position: relative;
-	float: left;
-}
-
-// Transparent box, floating right
-.tbox.fright {
-	position: relative;
-	float: right;
-}
-
 .box {
 	h1, h2, h3, h4 {
 		margin-top: -5px;
@@ -190,6 +175,18 @@ div[class*='span']
 
 .box.div {
   padding: @boxPaddingSize;
+}
+
+span.read-more {
+//  display: block;
+//  float: left;
+//  font-size: larger;
+//  margin-right: 15%;
+
+//  margin: 8px;
+
+  margin-left: 15px;
+  white-space: nowrap;
 }
 
 // set a top margin of @boxTopMargin + 8 px to make it show a margin 
@@ -232,6 +229,8 @@ div[class*='span']
 .copy-headline h1 {
   font-size: 24px;
 }
+
+
 
 
 
@@ -349,7 +348,8 @@ footer, .footer {
 }
 
 #main-image {
-//  width: 500px;
+  width: 350px;
+  margin: 20px;
 
 }
 
@@ -357,17 +357,108 @@ footer, .footer {
   padding: 15px;
 }
 
-.main-introduction {
+.copy-introduction {
   margin-top: 15px;
 }
 
 .tweets-block {
-  height: 200px;
+  height: 220px;
   background-color: white;
-  border: 3px @veryDarkSeaGreen solid;
-  overflow-y: scroll;
+  border: 1px @veryDarkSeaGreen solid;
+  overflow-x: scroll;
+
+  overflow-y: hidden;
 
   .tweet {
-    margin: 10px;
+    margin: 5px;
+    width: 300px;
+    height: 80px;
+
+    display: block;
+    float: left;
+
+//    border: 1px solid grey;
+    padding: 3px;
+
+    img {
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 48px;
+      height: 48px;
+    }
+
+    .handle {
+      font-weight: bold;
+    }
+    .username {
+      clear: right;
+    }
+
   }
+}
+
+.tweet-surface {
+  width: 5000px;
+  height: 200px;
+}
+
+
+.primary-action-button {
+  border-radius: 0px;
+  padding: 17px 30px 17px 30px ;
+
+  background: #394D54;
+
+}
+
+.primary-action-button:hover {
+    background: #333333 !important;
+}
+
+
+
+//.btn-primary {
+//  .buttonBackground(#fff, #222);
+//}
+
+
+button:hover {
+  background-color: white;
+}
+
+
+.block_updates {
+  padding: 10px;
+}
+
+.copy-introduction {
+  font-size: 16px;
+}
+
+/*
+ For the about page
+*/
+
+.table {
+
+//  border: 1px solid @veryDarkSeaGreen;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  td {
+    padding: 5px;
+  }
+
+  thead {
+    font-weight: bold;
+    font-size: larger;
+
+  }
+  tbody td:first-child {font-weight: bold;}
+
+}
+
+.striped-table {
+  tbody tr:nth-child(even)    { background-color: #f5f5f5; }
+  tbody tr:nth-child(odd)    { background-color: rgba(0, 103, 177, 0.14); }
 }

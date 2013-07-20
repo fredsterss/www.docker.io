@@ -4,13 +4,7 @@
 
 {% block content %}
 
-<style>
-
-tr:nth-child(odd)    { background-color:silver; }
-tr:nth-child(even)    { background-color: #f5f5f5; }
-
-</style>
-
+<a href="https://github.com/dotcloud/docker/"><img style="position: absolute; top: 70; right: 0; border: 0; z-index: 22" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
 <div class="">
     <div id="top"  class="main-banner" >
@@ -28,38 +22,45 @@ tr:nth-child(even)    { background-color: #f5f5f5; }
 
 <div class="container">
     <div class="row " >
-        <div class="span12 text-center main-introduction">
+        <div class="span12 text-center copy-introduction">
 
             {% markdown %}{% block copy_introduction %}Placeholder for content
             {% endblock %}{% endmarkdown %}
+
         </div>
     </div>
 
     <div class="row" >
-        <div class="span8 offset2">
-            {% markdown %}{% block copy_news %}Placeholder for content
-            {% endblock %}{% endmarkdown %}
+        <div class="span12 text-center action-button">
+            <button class="btn btn-large btn-primary primary-action-button">Get started!</button>
         </div>
     </div>
 
-    <div class="span10 offset1 tweets-block">
-        {% block tweets %}{% endblock %}
+
+    <div class="row" >
+        <h3>What people are saying about us:</h3>
+        <div class="span12 tweets-block">
+            <div class="tweet-surface">
+            {% block tweets %}{% endblock %}
+            </div>
+        </div>
     </div>
 
-{#        <div class="tweet">#}
-{#            <img src="https://si0.twimg.com/profile_images/2707460527/252a64411a339184ff375a96fb68dcb0_bigger.png">#}
-{#            <em>Mitchell Hashimoto ‏@mitchellh:</em> Docker launched today. It is incredible. They’re also working RIGHT NOW on a Vagrant provider. LXC is COMING!!#}
-{#        </div>#}
-
+    <div class="row" >
+        <div class="span6 block_updates copy_news">
+            {% markdown %}{% block copy_news %}Placeholder for content
+            {% endblock %}{% endmarkdown %}
+        </div>
+        <div class="span6 block_updates copy_community">
+            {% markdown %}{% block copy_community %}Placeholder for content
+            {% endblock %}{% endmarkdown %}
+        </div>
+    </div>
 
 
 </div> <!-- end container -->
 
 
-{#{% block tweets %}#}
-{#{% endblock tweets %}#}
-{##}
-{##}
 {#<form name="email_subscribe" action="{% url 'email_thanks' %}" method="POST">#}
 {#    {% csrf_token %}#}
 {#    {{ form }}#}

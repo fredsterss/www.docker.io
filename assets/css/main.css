@@ -36,6 +36,10 @@ p a {
 .inline-icon {
   margin-bottom: 6px;
 }
+.row {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 div[class*='span'] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -52,17 +56,6 @@ div[class*='span'] {
 .copy-headline {
   margin-top: 20px;
 }
-.tbox {
-  margin-top: 8px;
-}
-.tbox.fleft {
-  position: relative;
-  float: left;
-}
-.tbox.fright {
-  position: relative;
-  float: right;
-}
 .box h1,
 .box h2,
 .box h3,
@@ -74,6 +67,10 @@ div[class*='span'] {
 }
 .box.div {
   padding: 30px;
+}
+span.read-more {
+  margin-left: 15px;
+  white-space: nowrap;
 }
 .forcetopalign {
   margin-top: 15px !important;
@@ -181,18 +178,84 @@ footer .ligaturesymbols a,
   left: 0;
   right: 0;
 }
+#main-image {
+  width: 350px;
+  margin: 20px;
+}
 .main-banner {
   padding: 15px;
 }
-.main-introduction {
+.copy-introduction {
   margin-top: 15px;
 }
 .tweets-block {
-  height: 200px;
+  height: 220px;
   background-color: white;
-  border: 3px #394d54 solid;
-  overflow-y: scroll;
+  border: 1px #394d54 solid;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .tweets-block .tweet {
-  margin: 10px;
+  margin: 5px;
+  width: 300px;
+  height: 80px;
+  display: block;
+  float: left;
+  padding: 3px;
+}
+.tweets-block .tweet img {
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 48px;
+  height: 48px;
+}
+.tweets-block .tweet .handle {
+  font-weight: bold;
+}
+.tweets-block .tweet .username {
+  clear: right;
+}
+.tweet-surface {
+  width: 5000px;
+  height: 200px;
+}
+.primary-action-button {
+  border-radius: 0px;
+  padding: 17px 30px 17px 30px ;
+  background: #394D54;
+}
+.primary-action-button:hover {
+  background: #333333 !important;
+}
+button:hover {
+  background-color: white;
+}
+.block_updates {
+  padding: 10px;
+}
+.copy-introduction {
+  font-size: 16px;
+}
+/*
+ For the about page
+*/
+.table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.table td {
+  padding: 5px;
+}
+.table thead {
+  font-weight: bold;
+  font-size: larger;
+}
+.table tbody td:first-child {
+  font-weight: bold;
+}
+.striped-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+.striped-table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 103, 177, 0.14);
 }
